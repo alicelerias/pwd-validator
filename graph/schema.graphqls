@@ -1,0 +1,19 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+# In this file, I created the structs of the Query and the rules.
+
+input Rule {
+  name: String!
+  value: Int!
+}
+
+type VerifyResult {
+  valid: Boolean!
+  noMatch: [String!]
+}
+
+type Query {
+  verify(password: String, rules: [Rule!]!): VerifyResult
+}
